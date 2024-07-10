@@ -4,6 +4,29 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "This website aims to provide a platform for the training process for PEG staff.",
+    "crumbs": [
+      "Home",
+      "About"
+    ]
+  },
+  {
+    "objectID": "posts/peg_onboard/index.html",
+    "href": "posts/peg_onboard/index.html",
+    "title": "PEG onboard training",
+    "section": "",
+    "text": "Click to see the slides",
+    "crumbs": [
+      "Home",
+      "Posts",
+      "PEG onboard training"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PEG training session",
+    "section": "",
+    "text": "PEG onboard training\n\n\n\n\n\n\ntraining\n\n\n\nTo demonstrate the onboarding training process for PEG staff.\n\n\n\n\n\nJul 9, 2024\n\n\nScarlett Yu\n\n\n\n\n\n\nNo matching items"
   }
 ]
