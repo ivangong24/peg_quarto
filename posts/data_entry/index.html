@@ -194,11 +194,20 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#data-entry-process" id="toc-data-entry-process" class="nav-link" data-scroll-target="#data-entry-process">Data Entry Process</a>
+  <li><a href="#part-1-database-structure" id="toc-part-1-database-structure" class="nav-link" data-scroll-target="#part-1-database-structure">Part 1: Database structure</a>
   <ul class="collapse">
-  <li><a href="#step-1-open-the-database" id="toc-step-1-open-the-database" class="nav-link" data-scroll-target="#step-1-open-the-database">Step 1: Open the database</a></li>
-  <li><a href="#step-2-data-entry" id="toc-step-2-data-entry" class="nav-link" data-scroll-target="#step-2-data-entry">Step 2: Data entry</a></li>
-  <li><a href="#step-3-save-and-exit" id="toc-step-3-save-and-exit" class="nav-link" data-scroll-target="#step-3-save-and-exit">Step 3: Save and exit</a></li>
+  <li><a href="#where-to-find-the-databases" id="toc-where-to-find-the-databases" class="nav-link" data-scroll-target="#where-to-find-the-databases">Where to find the databases</a></li>
+  </ul></li>
+  <li><a href="#part-2-contact-manager" id="toc-part-2-contact-manager" class="nav-link" data-scroll-target="#part-2-contact-manager">Part 2: Contact manager</a>
+  <ul class="collapse">
+  <li><a href="#step-1-eligibility-screening" id="toc-step-1-eligibility-screening" class="nav-link" data-scroll-target="#step-1-eligibility-screening">Step 1: Eligibility screening</a></li>
+  <li><a href="#step-2-assign-pegid" id="toc-step-2-assign-pegid" class="nav-link" data-scroll-target="#step-2-assign-pegid">Step 2: Assign PEGID</a></li>
+  <li><a href="#step-3-add-to-contact-manager" id="toc-step-3-add-to-contact-manager" class="nav-link" data-scroll-target="#step-3-add-to-contact-manager">Step 3: Add to contact manager</a></li>
+  </ul></li>
+  <li><a href="#part-3-entry-databases" id="toc-part-3-entry-databases" class="nav-link" data-scroll-target="#part-3-entry-databases">Part 3: Entry databases</a>
+  <ul class="collapse">
+  <li><a href="#step-1-data-entry" id="toc-step-1-data-entry" class="nav-link" data-scroll-target="#step-1-data-entry">Step 1: Data entry</a></li>
+  <li><a href="#step-2-save-and-exit" id="toc-step-2-save-and-exit" class="nav-link" data-scroll-target="#step-2-save-and-exit">Step 2: Save and exit</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -250,28 +259,56 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In PEG study, we are using Microsoft Access to manage our data. All the data are stored in the Network Attached Storage (NAS) server in the PEG office. Since the data are sensitive (i.e., contain PHI information), we can only access to the database through the offline computers and it is important to follow the data security protocol when entering data. This training session will guide you through the data entry process.</p>
 </section>
-<section id="data-entry-process" class="level2">
-<h2 class="anchored" data-anchor-id="data-entry-process">Data Entry Process</h2>
-<section id="step-1-open-the-database" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-open-the-database">Step 1: Open the database</h3>
+<section id="part-1-database-structure" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-database-structure">Part 1: Database structure</h2>
+<p>In PEG study, we have separated the databases for <code>Cases (PD patients)</code>, <code>Household controls</code>, and <code>Population controls</code>. Each database contains two parts: the contact manager and the entry database.</p>
+<section id="where-to-find-the-databases" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-find-the-databases">Where to find the databases</h3>
 <ol type="1">
-<li><p>Log in to the offline computer with the shared username and password (which I will share with you in person).</p></li>
-<li><p>Go to <code>peg-boss</code> (the name of our NAS server) and find the database file named “xxx_entry1/2.accdb”. Note that there is a password for the database file as well.</p></li>
+<li><p>Log in to the offline computer with the shared username and password (I will share with you in person or you can consult with a RA in the office).</p></li>
+<li><p>Go to <code>peg-boss\PEG Collection and Contact Databases\PEG Databases ACTIVE\PEG3</code> and find the corresponding database file end with <code>.accdb</code>. Note that there is a password for each of the database file as well (I will also share with you in person or you can consult with a RA in the office). If you are interested, here is a <a href="documents/tree.txt">tree structure</a> of the database folder.</p></li>
 </ol>
 </section>
-<section id="step-2-data-entry" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-data-entry">Step 2: Data entry</h3>
+</section>
+<section id="part-2-contact-manager" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-contact-manager">Part 2: Contact manager</h2>
+<p>Contact manager is a database that stores the contact information of our participants. It is used to track the recruitment process, screen participant’s eligibility and follow-up with the participants.</p>
+<p>For example, if we received a reply card from a potential patient who indicated interest in participating our study, we need to 1) screen the participant to see if he/she/they are eligible for our study; 2) if eligible, add this potential participant to the contact manager database. In this case, we need to work on the <code>Case_recruitment_contact_manager.accdb</code> file.</p>
+<p>Here is the dashboard view for it: <img src="images/dashboard.png" class="img-fluid" alt="dashboard"></p>
+<section id="step-1-eligibility-screening" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-eligibility-screening">Step 1: Eligibility screening</h3>
 <ol type="1">
-<li><p>In the main switch board, press <code>ctrl + F</code> to search for the participant ID that you are going to enter data for. Then, navigate to the corresponding form by clicking the button on the switch board. The format and layout of each form in the database should be consistent with the paper/eletronic version that we use in the interview. If you notice any discrepancy, please report to the data manager.</p></li>
+<li>Click on <code>Screening patients</code> button to open the screening form. And you will see something like this: <img src="images/screening.png" class="img-fluid" alt="screening"></li>
+</ol>
+<p>On the left side, you will see the information from PD registry if the participant is from the registry. Otherwise, it will be blank. On the right side, you will need to input the information you collected from recruitment process (e.g., reply card, phone call, etc.). Sometimes, the information from the registry is not accurate or outdated, so you need to verify the information with the participant.</p>
+<ol start="2" type="1">
+<li>Switch to the “Screening” tab and input the information you collected in the screening process. Based on the information, please determine if the participant is eligible for our study and input the corresponding screening status in the “Screening status 1” field.</li>
+</ol>
+</section>
+<section id="step-2-assign-pegid" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-assign-pegid">Step 2: Assign PEGID</h3>
+<p>If the participant is eligible, you need to assign a <code>PEGID</code> to the participant. The <code>PEGID</code> is a unique identifier for each participant in our study. For every reply card that we mailed to the participant, a <code>MailID</code> is pre-assigned. A <code>PEGID</code> is the combination of <code>MailID</code> + <code>Participant's Initial</code> + <code>last two digits of birth year</code>. You can assign the <code>PEGID</code> by clicking the <code>Add New Patients</code> button, search for the corresponding <code>MailID</code> and put the new <code>PEGID</code> in the field in front of that <code>MailID</code>.</p>
+</section>
+<section id="step-3-add-to-contact-manager" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-add-to-contact-manager">Step 3: Add to contact manager</h3>
+<p>The <code>Add to Contact manager</code> button is greyed out by default. If you would like to add this participant in our database if eligible and willing to participate, please make sure to check <code>Are you willing to consider participating in the PEG Study</code>. Once the participant is added to the contact manager, the <code>PEG3 Contact Manager</code> form will pop out and the basic information will be automatically filled in the contact manager form. You can also go back to the dashboard and click the “See Patient Details” button to open the contact manager form. You will see something like this: <img src="images/contact_manager.png" class="img-fluid" alt="contact manager"> and you can input the information you collected from the participant in the corresponding fields.</p>
+</section>
+</section>
+<section id="part-3-entry-databases" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-entry-databases">Part 3: Entry databases</h2>
+<p>The entry databases are used to store the data that we collected from the participants during the interview. The data are organized in a structured way so that we can easily access and analyze them. In PEG study, we have <code>entry 1</code> and <code>entry 2</code> for <code>Cases</code>, <code>Household controls</code> and <code>Population controls</code>, respectively. Each database contains the forms for different sections of the interview.</p>
+<p>For example, we are going to enter data for a PD patient who has completed the interview. In this case, we need to work on the <code>PEG 3 Entry Database_Case.accdb</code> file.</p>
+<section id="step-1-data-entry" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-data-entry">Step 1: Data entry</h3>
+<ol type="1">
+<li><p>The main switch board looks like this: <img src="images/entry1.png" class="img-fluid" alt="entry1">. Put your cursor in the <code>PEGID</code> field, press <code>ctrl + F</code> to search for the participant ID that you are going to enter data for. Then, navigate to the corresponding form by clicking the button on the switch board. The format and layout of each form in the database should be consistent with the paper/eletronic version that we use in the interview. If you notice any discrepancy, please report to the data manager.</p></li>
 <li><p>Make sure to put your initials and date of entry in the corresponding fields in the form so that we can track the data entry process.</p></li>
 <li><p>If you cannot find the participant ID in the database, please close it and open it again to make sure that you are using the most updated version of the database. If you still cannot find the participant ID, please report to the data manager.</p></li>
 </ol>
 </section>
-<section id="step-3-save-and-exit" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-save-and-exit">Step 3: Save and exit</h3>
-<ol type="1">
-<li>After you finish entering data for a participant, press <code>ctrl + S</code> to save the data or right click the form and select “Save record”. Note that sometimes you might encounter a pop-up window saying that you cannot save the record at this time. This is because someone else is editing the same database. In this case, please wait for a few minutes or negotiate with the other person to see if he/she can close the database for a while so that you can save the record.</li>
-</ol>
+<section id="step-2-save-and-exit" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-save-and-exit">Step 2: Save and exit</h3>
+<p>After you finish entering data for a participant, press <code>ctrl + S</code> to save the data or right click the form and select “Save record”. Note that sometimes you might encounter a pop-up window saying that you cannot save the record at this time. This is because someone else is editing the same database. In this case, please wait for a few minutes or negotiate with the other person to see if he/she can close the database for a while so that you can save the record.</p>
 
 
 </section>
